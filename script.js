@@ -143,5 +143,13 @@ el.columnSelect.addEventListener('change', filterRows);
 el.caseCheckbox.addEventListener('change', filterRows);
 el.regexCheckbox.addEventListener('change', filterRows);
 
-// initial load
-fetchAndParseCSV();
+if (typeof window.Papa === 'undefined') {
+  console.error('PapaParse is not loaded. Ensure papaparse.min.js is included before script.js and remove/fix the integrity attribute.');
+  const tbody = document.getElementById('resultsBody');
+  if (tbody) {
+    tbody.innerHTML = '<tr><td colspan="100%">Error: PapaParse failed to load. Check the papaparse script tag (remove invalid integrity or use the correct hash) and ensure the script is included before script.js.</td></tr>';
+  }
+} else {
+  // start the normal flow
+  fetchAndParseCSV();
+}
