@@ -1,6 +1,6 @@
 // Simple CSV search using PapaParse and client-side filtering.
 // Adjust `CSV_PATH` if your CSV is in a different location.
-const CSV_PATH = 'afigames.csv';
+const CSV_PATH = '/afigames.csv';
 let rows = [];      // array of objects (header -> value)
 let headers = [];   // ordered list of columns
 
