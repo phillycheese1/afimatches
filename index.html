@@ -11,15 +11,28 @@
     <h1>CSV Search</h1>
 
     <div class="controls">
-      <input id="searchInput" type="search" placeholder="Type to search..." />
+      <!-- Simple global search (keeps backward compatibility) -->
+      <input id="searchInput" type="search" placeholder="Type to search (global)..." />
       <select id="columnSelect">
         <option value="__all__">All columns</option>
       </select>
 
       <label><input id="caseCheckbox" type="checkbox" /> Case-sensitive</label>
       <label><input id="regexCheckbox" type="checkbox" /> Regular expression</label>
+
+      <button id="addFilterBtn" type="button">Add filter</button>
+
+      <label for="matchMode">Match:</label>
+      <select id="matchMode">
+        <option value="all">Match all (AND)</option>
+        <option value="any">Match any (OR)</option>
+      </select>
+
       <span id="rowsCount" class="muted"></span>
     </div>
+
+    <!-- Advanced per-column filters -->
+    <div id="filtersWrap" class="filters"></div>
 
     <div id="tableWrap">
       <table id="results">
@@ -31,9 +44,8 @@
     <p class="muted">CSV file: <code>afigames.csv</code></p>
   </main>
 
-  <!-- PapaParse (no integrity attribute here) -->
+  <!-- PapaParse: ensure this loads before script.js (removed integrity for simplicity) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
-  <!-- Your script that depends on PapaParse -->
   <script src="script.js"></script>
 </body>
 </html>
