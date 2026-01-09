@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>AFI Matches Database</title>
+  <title>CSV Search (GitHub Pages)</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <main>
-    <h1>AFI Matches</h1>
+    <h1>CSV Search</h1>
 
     <div class="controls">
       <input id="searchInput" type="search" placeholder="Type to search..." />
@@ -28,11 +28,12 @@
       </table>
     </div>
 
-    <p class="muted">CSV file: <code>afigames.csv</code> (place it in the repo root or adjust fetch path in script.js)</p>
+    <p class="muted">CSV file: <code>afigames.csv</code></p>
   </main>
 
-  <!-- PapaParse for robust CSV parsing -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js" integrity="sha512-somehash" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- PapaParse (no integrity attribute here) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <!-- Your script that depends on PapaParse -->
   <script src="script.js"></script>
 </body>
 </html>
