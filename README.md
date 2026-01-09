@@ -1,2 +1,2 @@
-# afimatches.github.io
+# afimatches
 AFI Games Database
