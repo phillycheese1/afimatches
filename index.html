@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CSV Search (GitHub Pages)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <h1>CSV Search</h1>
+
+    <div class="controls">
+      <input id="searchInput" type="search" placeholder="Type to search..." />
+      <select id="columnSelect">
+        <option value="__all__">All columns</option>
+      </select>
+
+      <label><input id="caseCheckbox" type="checkbox" /> Case-sensitive</label>
+      <label><input id="regexCheckbox" type="checkbox" /> Regular expression</label>
+      <span id="rowsCount" class="muted"></span>
+    </div>
+
+    <div id="tableWrap">
+      <table id="results">
+        <thead id="resultsHead"></thead>
+        <tbody id="resultsBody"></tbody>
+      </table>
+    </div>
+
+    <p class="muted">CSV file: <code>data.csv</code> (place it in the repo root or adjust fetch path in script.js)</p>
+  </main>
+
+  <!-- PapaParse for robust CSV parsing -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js" integrity="sha512-somehash" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="script.js"></script>
+</body>
+</html>
